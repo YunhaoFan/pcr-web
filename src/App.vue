@@ -1,23 +1,36 @@
 <template>
     <div id="app">
         <Banner/>
-        <ChopOrder/>
+        <el-row>
+            <el-col :span="16" align="center">
+                <UserPool/>
+            </el-col>
+            <el-col :span="8" align="center">
+                <AttackPool/>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
 <script>
 	import Banner from './components/Banner.vue'
-	import ChopOrder from "./components/ChopOrder";
+	import UserPool from "./components/UserPool";
+	import AttackPool from "./components/AttackPool";
+
 	export default {
 		name: 'App',
 		components: {
-			ChopOrder,
+			AttackPool,
+			UserPool,
 			Banner
 		}
 	}
 </script>
 
 <style>
+    @import "assets/css/init.css";
+    @import "assets/css/global.css";
+
     #app {
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
