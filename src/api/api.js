@@ -5,7 +5,7 @@ import fetch from '../utils/fetch';
 export const defaultPool = pool => fetch('/defaultPool', pool,'POST');
 
 // alter default box based on default pool
-export const defaultBox = box => fetch('/defaultBox', box);
+export const defaultBox = box => fetch('/defaultBox', box,'POST');
 
 // get current attack pool and box
 export const getPoolAndBox = () => fetch('/poolAndBox');
@@ -21,3 +21,4 @@ export const attackInfo = () => fetch('/attackInfo');
 
 // get attack pool
 export const attackPool = () => fetch('/attackPool');
+

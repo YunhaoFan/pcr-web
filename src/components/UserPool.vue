@@ -49,6 +49,7 @@
 
 <script>
 	import {attackInfo, boxInfo} from "../api/api";
+	import {Event} from "../utils/eventBus";
 
 	export default {
 		name: "ChopOrder",
@@ -101,7 +102,13 @@
 		created() {
 			this.getBoxList();
 			this.getAttackInfo();
-		}
+		},
+        mounted(){
+			Event.$on('refreshUserPool',()=>{
+				this.getBoxList();
+				this.getAttackInfo();
+            })
+        }
 	}
 </script>
 

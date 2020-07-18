@@ -1,14 +1,24 @@
 <template>
     <div id="app">
-        <Banner/>
-        <el-row>
-            <el-col :span="16" align="center">
-                <UserPool/>
-            </el-col>
-            <el-col :span="8" align="center">
-                <AttackPool/>
-            </el-col>
-        </el-row>
+        <el-container>
+            <el-header>
+                <Banner/>
+            </el-header>
+            <el-main>
+                <el-row>
+                    <el-col :span="16" align="center">
+                        <UserPool/>
+                    </el-col>
+                    <el-col :span="8" align="center">
+                        <AttackPool/>
+                    </el-col>
+                </el-row>
+            </el-main>
+            <el-footer class="footer flex-col-center flex-row-center">
+                <a href="https://github.com/YunhaoFan">@Fumino</a>
+            </el-footer>
+        </el-container>
+
     </div>
 </template>
 

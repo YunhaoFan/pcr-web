@@ -24,6 +24,13 @@
     display:inline-block;
 }
 
+.footer{
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(193, 193, 193, 0.46);
+    width: 100%;
+}
+
 /* margin padding */
 .mt-10{
     margin-top: 10px;

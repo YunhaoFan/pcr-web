@@ -43,6 +43,7 @@
 
 <script>
 	import {attackPool} from "../api/api";
+	import {Event} from "../utils/eventBus";
 
 	export default {
 		name: "AttackPool",
@@ -67,9 +68,11 @@
 				const pool = await attackPool();
 				this.attackPool = pool.attackPool;
 				this.total = pool.total;
+				let leftPoolCopy = 0;
 				for (let i in this.attackPool) {
-					this.leftPool += this.attackPool[i]
+					leftPoolCopy += this.attackPool[i]
 				}
+				this.leftPool = leftPoolCopy;
 			},
 			showOrderDialog() {
 				this.dialogVisible = true;
@@ -80,6 +83,11 @@
 		},
 		created() {
 			this.getAttackPool();
+		},
+        mounted() {
+			Event.$on('refreshUserPool',()=>{
+				this.getAttackPool()
+            })
 		}
 	}
 </script>
