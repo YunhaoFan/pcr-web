@@ -13,6 +13,9 @@
             <el-col :span="3" class="flex-col-center" style="height: 30px">
                 <el-button @click="showBoxDialog" size="small">点此更改默认BOX</el-button>
             </el-col>
+            <el-col :span="3" class="flex-col-center" style="height: 30px">
+                <el-button @click="initEverything" size="small">初始化所有数据</el-button>
+            </el-col>
         </el-row>
 
         <el-dialog :visible.sync="visibleDialog"
@@ -20,16 +23,44 @@
                    title="更改默认刀池(更改后须重新更改默认BOX)">
             <el-form label-position="left" :model="attackPoolForm" ref="attackPoolForm">
                 <el-form-item label="BOX1" label-width="100px">
-                    <el-input v-model="attackPoolForm.box1" placeholder="请输入BOX名称"></el-input>
+                    <el-row>
+                        <el-col :span="12">
+                            <el-input v-model="attackPoolForm.box1" placeholder="请输入BOX名称"></el-input>
+                        </el-col>
+                        <el-col :span="8">
+                            <el-input placeholder="请输入对应伤害值(W)" class="damageInputBox"></el-input>
+                        </el-col>
+                    </el-row>
                 </el-form-item>
                 <el-form-item label="BOX2" label-width="100px">
-                    <el-input v-model="attackPoolForm.box2" placeholder="请输入BOX名称"></el-input>
+                    <el-row>
+                        <el-col :span="12">
+                            <el-input v-model="attackPoolForm.box2" placeholder="请输入BOX名称"></el-input>
+                        </el-col>
+                        <el-col :span="8">
+                            <el-input placeholder="请输入对应伤害值(W)" class="damageInputBox"></el-input>
+                        </el-col>
+                    </el-row>
                 </el-form-item>
                 <el-form-item label="BOX3" label-width="100px">
-                    <el-input v-model="attackPoolForm.box3" placeholder="请输入BOX名称"></el-input>
+                    <el-row>
+                        <el-col :span="12">
+                            <el-input v-model="attackPoolForm.box3" placeholder="请输入BOX名称"></el-input>
+                        </el-col>
+                        <el-col :span="8">
+                            <el-input placeholder="请输入对应伤害值(W)" class="damageInputBox"></el-input>
+                        </el-col>
+                    </el-row>
                 </el-form-item>
                 <el-form-item label="BOX4" label-width="100px">
-                    <el-input v-model="attackPoolForm.box4" placeholder="请输入BOX名称"></el-input>
+                    <el-row>
+                        <el-col :span="12">
+                            <el-input v-model="attackPoolForm.box4" placeholder="请输入BOX名称"></el-input>
+                        </el-col>
+                        <el-col :span="8">
+                            <el-input placeholder="请输入对应伤害值(W)" class="damageInputBox"></el-input>
+                        </el-col>
+                    </el-row>
                 </el-form-item>
                 <el-form-item align="center">
                     <el-button @click="saveAttackPool" class="confirm-button">保存</el-button>
@@ -44,28 +75,52 @@
                 :close-on-press-escape="false">
             <el-form label-position="left" :model="attackBoxForm" ref="attackBoxForm">
                 <el-form-item label="BOX1" label-width="100px">
-                    <el-select v-model="attackBoxForm.box1" placeholder="请选择BOX1">
-                        <el-option v-for="item in choiceBox"
-                                   :key="item.value"
-                                   :label="item.label"
-                                   :value="item.value"></el-option>
-                    </el-select>
+                    <el-row>
+                        <el-col :span="12">
+                            <el-select v-model="attackBoxForm.box1" placeholder="请选择BOX1">
+                                <el-option v-for="item in choiceBox"
+                                           :key="item.value"
+                                           :label="item.label"
+                                           :value="item.value"></el-option>
+                            </el-select>
+                        </el-col>
+                        <el-col :span="12">
+                            <span>伤害</span>
+                        </el-col>
+
+                    </el-row>
                 </el-form-item>
-                <el-form-item label="BOX1" label-width="100px">
-                    <el-select v-model="attackBoxForm.box2" placeholder="请选择BOX2">
-                        <el-option v-for="item in choiceBox"
-                                   :key="item.value"
-                                   :label="item.label"
-                                   :value="item.value"></el-option>
-                    </el-select>
+
+                <el-form-item label="BOX2" label-width="100px">
+                    <el-row>
+                        <el-col :span="12">
+                            <el-select v-model="attackBoxForm.box2" placeholder="请选择BOX2">
+                                <el-option v-for="item in choiceBox"
+                                           :key="item.value"
+                                           :label="item.label"
+                                           :value="item.value"></el-option>
+                            </el-select>
+                        </el-col>
+                        <el-col :span="12">
+                            <span>伤害</span>
+                        </el-col>
+                    </el-row>
                 </el-form-item>
-                <el-form-item label="BOX1" label-width="100px">
-                    <el-select v-model="attackBoxForm.box3" placeholder="请选择BOX3">
-                        <el-option v-for="item in choiceBox"
-                                   :key="item.value"
-                                   :label="item.label"
-                                   :value="item.value"></el-option>
-                    </el-select>
+
+                <el-form-item label="BOX3" label-width="100px">
+                    <el-row>
+                        <el-col :span="12">
+                            <el-select v-model="attackBoxForm.box3" placeholder="请选择BOX3">
+                                <el-option v-for="item in choiceBox"
+                                           :key="item.value"
+                                           :label="item.label"
+                                           :value="item.value"></el-option>
+                            </el-select>
+                        </el-col>
+                        <el-col :span="12">
+                            <span>伤害</span>
+                        </el-col>
+                    </el-row>
                 </el-form-item>
                 <el-form-item align="center">
                     <el-button @click="saveBoxPool" class="confirm-button">保存</el-button>
@@ -76,7 +131,7 @@
 </template>
 
 <script>
-	import {userInfo, defaultPool, getPoolAndBox,defaultBox} from "../api/api";
+	import {userInfo, defaultPool, getPoolAndBox, defaultBox, initAll} from "../api/api";
 	import {Event} from "../utils/eventBus";
 
 	export default {
@@ -152,7 +207,7 @@
 			// 保存默认box->关闭对话框->更新刀池和box信息
 			async saveBoxPool() {
 				try {
-                    const resData = await defaultBox(this.attackBoxForm);
+					const resData = await defaultBox(this.attackBoxForm);
 					if (resData.errorCode == 0) {
 						this.$message({
 							type: 'success',
@@ -162,7 +217,7 @@
 						this.poolAndBox();
 						Event.$emit('refreshUserPool')
 					}
-				}catch (e) {
+				} catch (e) {
 					this.$message({
 						type: 'error',
 						message: '出大问题！'
@@ -190,6 +245,27 @@
 					countPool++
 				}
 				this.choiceBox = choiceBoxCopy
+			},
+			// 初始化所有东西
+			async initEverything() {
+				try {
+					const resData = await initAll();
+					if (resData.errorCode == 0) {
+						this.$message({
+							type: 'success',
+							message: '初始化数据成功！'
+						});
+						// 更新所有数据
+						Event.$emit('refreshUserPool');
+						this.poolAndBox();
+					}
+				} catch (e) {
+					this.$message({
+						type: 'error',
+						message: '出大问题！'
+					});
+					console.log(e);
+				}
 			}
 		},
 		created() {
@@ -215,5 +291,9 @@
 
     .confirm-button {
         width: 100px;
+    }
+
+    .damageInputBox{
+        margin-left: 30px;
     }
 </style>

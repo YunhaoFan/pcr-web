@@ -22,3 +22,5 @@ export const attackInfo = () => fetch('/attackInfo');
 // get attack pool
 export const attackPool = () => fetch('/attackPool');
 
+// init all
+export const initAll = () => fetch('/init');
